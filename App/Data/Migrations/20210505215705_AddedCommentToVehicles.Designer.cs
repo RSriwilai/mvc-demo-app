@@ -2,32 +2,20 @@
 using App.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace App.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210505215705_AddedCommentToVehicles")]
+    partial class AddedCommentToVehicles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.5");
-
-            modelBuilder.Entity("App.Entities.Manufacturer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Manufactures");
-                });
 
             modelBuilder.Entity("App.Entities.Vehicle", b =>
                 {
@@ -57,7 +45,7 @@ namespace App.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("RegistrationNumber")
-                        .HasColumnType("VARCHAR(6)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

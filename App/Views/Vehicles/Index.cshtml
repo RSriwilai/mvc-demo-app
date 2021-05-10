@@ -1,6 +1,10 @@
 @model IEnumerable<App.Entities.Vehicle>
 
-
+<div>
+    @section topSection {
+        <h1>@ViewBag.message</h1>
+    }
+</div>
 <a asp-action="Create">Registrera ny bil</a>
 <hr>
 
@@ -30,6 +34,5 @@
         </tr>
     }
     </tbody>
-
 </table>
 

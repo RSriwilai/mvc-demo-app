@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using App.Data;
 using Microsoft.EntityFrameworkCore;
+using App.Interfaces;
 
 namespace App
 {
@@ -26,6 +27,10 @@ namespace App
             {
               options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
             }); 
+
+        
+            //Dependency Injection ...
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllersWithViews();
         }
 
