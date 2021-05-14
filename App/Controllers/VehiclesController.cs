@@ -1,11 +1,7 @@
-using App.Data;
 using App.Entities;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 using App.ViewModels;
-using Microsoft.EntityFrameworkCore;
 using App.Interfaces;
 
 namespace App.Controllers
